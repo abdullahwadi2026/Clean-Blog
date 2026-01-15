@@ -1,54 +1,55 @@
 # Laravel Blog Project
 
-##  وصف المشروع
+## Project Description
 
-مشروع **Laravel Blog** هو تطبيق مدونة مبني باستخدام إطار العمل **Laravel**، يدمج بين قالب **Clean Blog** للواجهة الأمامية ولوحة التحكم **SB Admin 2** للإدارة، مع محرر النصوص الغني **TinyMCE** لإدارة المحتوى.
+The **Laravel Blog** project is a blogging application built using the **Laravel** framework. It integrates the **Clean Blog** theme for the front-end and the **SB Admin 2** control panel for administration, along with the rich text editor **TinyMCE** for content management.
 
-يهدف المشروع إلى توفير منصة بسيطة وقابلة للتوسعة لإدارة المقالات مع فصل واضح بين واجهة المستخدم ولوحة التحكم.
+The project aims to provide a simple and extensible platform for managing posts with a clear separation between the user interface and the control panel.
 
 ---
 
-##  التقنيات المستخدمة
+## Technologies Used
 
 * **Backend:** Laravel 12 (PHP)
 * **Frontend:** HTML, CSS, Bootstrap
 * **Admin Dashboard:** SB Admin 2
 * **Text Editor:** TinyMCE
-* **Database:** MySQL (أو أي قاعدة بيانات مدعومة من Laravel)
+* **Database:** MySQL (or any Laravel-supported database)
 * **Containerization:** Docker & Docker Compose
 
 ---
 
-## كيفية البناء والتشغيل باستخدام Docker
+## How to Build and Run with Docker
 
-### 1️⃣ المتطلبات
+### 1️⃣ Requirements
 
 * Docker
 * Docker Compose
 
-### 2️⃣ استنساخ المشروع
+### 2️⃣ Cloning the Project
 
 ```bash
-git clone https://github.com/username/repo-name.git
-cd repo-name
+`git clone https://github.com/username/repo-name.git
+```
+`` repo-name
 ```
 
-###  إعداد ملف البيئة
+### Setting Up the Environment File
 
 ```bash
-cp .env.example .env
+`cp .env.example .env
 ```
 
->  تأكد من ضبط إعدادات قاعدة البيانات في ملف `.env` لتتوافق مع إعدادات Docker.
+> Ensure the database settings are configured In the `.env` file to match Docker settings.
 
-###  بناء وتشغيل الحاويات
+### Building and Running Containers
 
 ```bash
 docker compose build
 docker compose up -d
 ```
 
-###  إعداد Laravel داخل الحاوية
+### Setting Up Laravel Inside a Container
 
 ```bash
 docker compose exec app php artisan key:generate
@@ -57,15 +58,15 @@ docker compose exec app php artisan migrate
 
 ---
 
-##  إيقاف الحاويات وتنظيفها
+## Stopping and Cleaning Containers
 
-### إيقاف الحاويات
+### Stopping Containers
 
 ```bash
 docker compose down
 ```
 
-### إيقاف الحاويات مع حذف الأحجام (Volumes)
+### Stopping Containers and Deleting Volumes
 
 ```bash
 docker compose down -v
@@ -73,54 +74,64 @@ docker compose down -v
 
 ---
 
-##  ملاحظات حول الإعدادات
+## Notes on Settings
 
-* **المنفذ الافتراضي:**
+* **Default Port:**
 
-  * التطبيق يعمل عادة على: `http://localhost:8000`
-* **متغيرات البيئة المهمة:**
+* Application typically runs on: `http://localhost:8000`
 
-  * `APP_PORT`
-  * `DB_HOST`
-  * `DB_PORT`
-  * `DB_DATABASE`
-  * `DB_USERNAME`
-  * `DB_PASSWORD`
+* **Important Environment Variables:**
 
-> يمكن تعديل هذه القيم من ملف `.env` حسب بيئة التشغيل.
+* `APP_PORT`
 
----
+* `DB_HOST`
 
-## كيفية اختبار المشروع
+* `DB_PORT`
 
-### الواجهة الأمامية
+* `DB_DATABASE`
 
-* افتح المتصفح وانتقل إلى:
+* `DB_USERNAME`
 
-  ```
-  http://localhost:8000
-  ```
+* `DB_PASSWORD`
 
-### لوحة التحكم (Admin Dashboard)
-
-* انتقل إلى:
-
-  ```
-  http://localhost:8000/admin
-  ```
-
-* سجّل الدخول باستخدام بيانات المستخدم أو أنشئ مستخدمًا جديدًا عبر Seeder أو Tinker.
+> These values ​​can be modified from the `.env` file depending on the operating environment.
 
 ---
 
-## الإسناد (Attribution)
+## How to Test the Project
+
+### Front End
+
+* Open your browser and go to:
+
+```
+
+http://localhost:8000
+
+```
+
+### Admin Dashboard
+
+* Go to:
+
+```
+
+http://localhost:8000/admin
+
+```
+
+* Log in using your user credentials or create a new user via Seeder or Tinker.
+
+---
+
+## Attribution
 
 * **Clean Blog Theme** – Start Bootstrap
+
 * **SB Admin 2** – Start Bootstrap
+
 * **TinyMCE** – Rich Text Editor
+
 * **Laravel Framework** – Taylor Otwell
 
 ---
-
-
-
